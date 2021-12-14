@@ -1,8 +1,8 @@
-loan_amount = float(input("Введите размер кредита (желаемая сумма ДС): "))
-loan_rate = float(input("Введите процентную ставку по кредиту (процент годовых): "))
+loan_amount = float(input("Введите размер кредита (желаемая сумма ДС): ").replace(',', '.'))
+loan_rate = float(input("Введите процентную ставку по кредиту (процент годовых): ").replace(',', '.'))
 # Вычисляем месячный процент начислений, средств, соответствующий указанному годовому %
 monthly_deduction_rate = (1 + loan_rate / 100) ** (1 / 12) - 1
-monthly_loan_payment = float(input("Введите желаемый ежемесяцный платеж: "))
+monthly_loan_payment = float(input("Введите желаемый ежемесяцный платеж: ").replace(',', '.'))
 if monthly_loan_payment < loan_amount * monthly_deduction_rate:
     print("Кредит не может быть выдан. Размер платежа должен погашать начисления % по кредиту.")
 else:
